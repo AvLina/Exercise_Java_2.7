@@ -71,4 +71,12 @@ class RadioTest {
         assertEquals(1, radio.getCurrentVolume());
     }
 
+    @Test
+    public void decreaseInVolume2() {
+        radio.setMaxVolume(10);
+        radio.setMinVolume(10);
+        radio.reduseVolume(10);
+        assertEquals(0, radio.getCurrentVolume());
+    }
+
 }
