@@ -7,9 +7,16 @@ public class Radio {
     private int currentVolume;
     private int maxStation = 9;
     private int minStation = 0;
-    private int maxVolume = 10;
+    private int maxVolume = 100;
     private int minVolume = 0;
     private boolean on;
+
+    public Radio(String name) {
+        this.name = name;
+    }
+
+    public Radio() {
+    }
 
     public boolean isOn() {
         return on;
@@ -116,10 +123,10 @@ public class Radio {
     }
 
     public void downVolume() {
-        if (currentVolume <= minVolume) {
+        if (this.currentVolume <= minVolume) {
             setCurrentVolume(maxVolume);
         } else {
-            currentVolume = currentVolume - 1;
+            this.currentVolume = this.currentVolume - 1;
         }
     }
 
