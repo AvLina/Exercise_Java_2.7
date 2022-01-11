@@ -13,14 +13,6 @@ public class RadioTest {
         rad.setName(expected);
         assertEquals(expected, rad.getName());
     }
-    @Test
-    void initFields(){
-        assertEquals(9, rad.getMaxStation());
-        assertEquals(0, rad.getMinStation());
-        assertEquals(10, rad.getMaxVolume());
-        assertEquals(0, rad.getMinVolume());
-        assertFalse(rad.isOn());
-    }
 
     @Test
     void shouldNotSetStationBelowMin() {
@@ -75,10 +67,10 @@ public class RadioTest {
     }
     @Test
     void shouldNotSetVolumeAboveMax() {
-        rad.setCurrentVolume(10);
+        rad.setCurrentVolume(100);
 
-        rad.setCurrentVolume(11);
-        assertEquals(10, rad.getCurrentVolume());
+        rad.setCurrentVolume(101);
+        assertEquals(100, rad.getCurrentVolume());
     }
     @Test
     void increaseVolume(){
@@ -89,7 +81,7 @@ public class RadioTest {
     }
     @Test
     void transitionFromMaxToMinVolume(){
-        rad.setCurrentVolume(10);
+        rad.setCurrentVolume(100);
 
         rad.increaseVolume();
         assertEquals(0,rad.getCurrentVolume());
@@ -106,7 +98,7 @@ public class RadioTest {
         rad.setCurrentVolume(0);
 
         rad.downVolume();
-        assertEquals(10,rad.getCurrentVolume());
+        assertEquals(100,rad.getCurrentVolume());
     }
 
 }
