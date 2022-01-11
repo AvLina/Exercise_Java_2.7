@@ -13,14 +13,6 @@ public class RadioTest {
         rad.setName(expected);
         assertEquals(expected, rad.getName());
     }
-    @Test
-    void initFields(){
-        assertEquals(9, rad.getMaxStation());
-        assertEquals(0, rad.getMinStation());
-        assertEquals(100, rad.getMaxVolume());
-        assertEquals(0, rad.getMinVolume());
-        assertFalse(rad.isOn());
-    }
 
     @Test
     void shouldNotSetStationBelowMin() {
